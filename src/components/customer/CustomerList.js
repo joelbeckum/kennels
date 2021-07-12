@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { CustomerContext } from "./CustomerProvider"
-import { Customer } from "./Customer"
+import { CustomerCard } from "./CustomerCard"
 import "./Customer.css"
 
 export const CustomerList = () => {
@@ -15,7 +15,7 @@ export const CustomerList = () => {
       <div className="customers">
         {
           customers.map(customer => {
-            return <Customer key={customer.id} customer={customer} />
+            return <CustomerCard key={customer.id} customer={customer} />
           })
         }
       </div>

@@ -3,9 +3,12 @@ import { Route } from "react-router-dom";
 import { Home } from "./Home";
 import { AnimalProvider } from "./animal/AnimalProvider";
 import { AnimalList } from "./animal/AnimalList";
-import { Location } from "./location/Location";
-import { Customer } from "./customer/Customer";
-import { Employee } from "./employee/Employee";
+import { LocationProvider } from "./location/LocationProvider";
+import { LocationList } from "./location/LocationList";
+import { CustomerProvider } from "./customer/CustomerProvider";
+import { CustomerList } from "./customer/CustomerList"
+import { EmployeeProvider } from "./employee/EmployeeProvider"
+import { EmployeeList } from "./employee/EmployeeList";
 
 export const ApplicationViews = () => {
   return (
@@ -22,17 +25,23 @@ export const ApplicationViews = () => {
         </Route>
       </AnimalProvider>
 
-      <Route path="/locations">
-        <Location />
+      <LocationProvider>
+      <Route exact path="/locations">
+        <LocationList />
       </Route>
-
-      <Route path="/customers">
-        <Customer />
+      </LocationProvider>
+    
+      <CustomerProvider>
+        <Route exact path="/customers">
+            <CustomerList />
+        </Route>
+      </CustomerProvider>
+        
+      <EmployeeProvider>
+      <Route exact path="/employees">
+        <EmployeeList />
       </Route>
-
-      <Route path="/employees">
-        <Employee />
-      </Route>
+      </EmployeeProvider>
     </>
   );
 };

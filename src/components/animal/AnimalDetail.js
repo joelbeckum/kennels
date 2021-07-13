@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
-import "./Animal.css"
 import { useParams } from "react-router-dom"
+import "./Animal.css"
 
 export const AnimalDetail = () => {
-  const { getAnimalById } = useContext(AnimalContext)
+    const { getAnimalById } = useContext(AnimalContext)
 
-	const [animal, setAnimal] = useState({})
+    const [animal, setAnimal] = useState({})
 
 	const {animalId} = useParams();
 
